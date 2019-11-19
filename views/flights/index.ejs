@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  
+      <h2>Flight List</h2>
+  <table>
+    <thead>
+      <th>Airline</th>
+      <th>AirPort</th>
+      <th>Flight Number</th>
+      <th>Departs</th>
+      <th>Now Flying</th>
+    </thead>
+    <tbody>
+    <% flights.forEach(function(flight) { %>
+      <tr>
+        <td><%= flight.airline %></td>
+        <td><%= flight.airport %></td>
+        <td><%= flight.flightNo %></td>
+        <td><%= flight.departs %></td>
+        
+        <!-- combine departs and now flying yes or no into an if statement -->
+        <td><%= flight.nowFlying ? 'Yes' : 'No' %></td>
+        <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
+      </tr>
+    <% }) %>
+</body>
+</html>
+
