@@ -31,17 +31,24 @@ function addTicket(req, res) {
   // }
 
 function create(req, res) {
-  Ticket.create(req.body, function(err, performer) {
-    res.redirect('/flights');
+  req.body.flight = req.params.id
+  Ticket.create(req.body, function(err, ticket) {
+    res.redirect(`/flights/${req.params.id}`);
   });
 }
 
 
 function newTicket(req, res) {
-  Ticket.find({}, function(err, tickets) {
+  Flight.findById(req.params.id, function(err, flight){
     res.render('tickets/new', {
-      title: 'Add Ticket',
-      flight: req.params.id
-    });
+      title: "Add Ticket",
+      flight
+    })
   })
+  // Ticket.find({}, function(err, tickets) {
+  //   res.render('tickets/new', {
+  //     title: 'Add Ticket',
+  //     flight: req.params.id
+  //   });
+  // })
 }

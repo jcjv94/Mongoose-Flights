@@ -17,18 +17,27 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Flight.findById(req.params.id)
-  .populate('ticket').exec(function(err, flight) {
-    Ticket.find(
-      {_id: {$nin: flight.ticket}},
-      function(err, tickets){
-        console.log(tickets);
-        res.render('flights/show', {
-          title: 'Flight Details', flight, tickets
-        });
-      }
-    );
-  });
+  Flight.findById(req.params.id, function(err, flight){
+    Ticket.find({"flight": flight._id}, function(err, tickets){
+      res.render('flights/show', {
+        title: "Flight Details",
+        flight,
+        tickets
+      })
+    })
+  })
+  // Flight.findById(req.params.id)
+  // .populate('ticket').exec(function(err, flight) {
+  //   Ticket.find(
+  //     {_id: {$nin: flight.ticket}},
+  //     function(err, tickets){
+  //       console.log(tickets);
+  //       res.render('flights/show', {
+  //         title: 'Flight Details', flight, tickets
+  //       });
+  //     }
+  //   );
+  // });
 }
 
 function create(req, res) {

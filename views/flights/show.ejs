@@ -32,15 +32,12 @@
 <!-- <form id="add-ticket" action="/flights/<%= flight._id%>/tickets" method="POST"> -->
   <label for="seat">Seat No.</label>
     <%- tickets.map(p => 
-      `<option value="${p._id}">${p.seat}</option>`
+      `<option value="${p._id}">${p.seat} - ${p.price}</option>`
     ).join('') %>
     <br>  
-    <label for="price">Ticket Price</label>
-    <%- tickets.map(p => 
-      `<option value="${p._id}">${p.price}</option>`
-    ).join('') %>
+   
 
-  <a href="/tickets/<%= flight._id %>/new"
+  <a href="/flights/<%= flight._id %>/tickets/new"
   <%- title === 'Add Ticket' ? 'class="active"' : '' %>>
   ADD Ticket</a>
 <!-- </form> -->
