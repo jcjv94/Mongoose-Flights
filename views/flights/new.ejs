@@ -8,9 +8,9 @@
     <title>Mongoose Flights</title>
 </head>
 <body>
-    <h2>Enter a New Flight</h2>
+    <h2 class="heading">Enter a New Flight</h2>
 <form action="/flights" method="POST">
-    <label>Airline:
+    <label >Airline:
       <select name="airline">
         <option value="American">American</option>
         <option value="Southwest">Southwest</option>
@@ -29,13 +29,13 @@
     <label>FlightNo:
       <input type="text" name="flightNo">
     </label><br>
-    <label>Departs:
+    <label>Departure:
       <input type="datetime-local" name="departs"> 
     </label><br>
     <label>Now Departing:
-      <input type="checkbox" name="nowFlying" checked>
+      <input id="button" type="checkbox" name="nowFlying" checked>
     </label><br>
-    <input type="submit" value="Add Flight">
+    <input id="button" type="submit" value="Add Flight">
 </form>
     
 </body>

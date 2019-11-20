@@ -1,8 +1,52 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 a {
   color: #00B7FF;
+}
+
+h2 {
+  font-size: xx-large;
+  letter-spacing: 3px;
+}
+
+th, td, form {
+  border: solid thin black;
+  padding: 10px 15px 10px;
+}
+
+th{
+  font-size: 15px;
+}
+
+.tableHeadings {
+  text-align: center;
+}
+
+.fullTable {
+  text-align: center;
+  border: solid thin blue;
+  background-color: papayawhip;
+}
+
+label{
+  display: grid;
+  text-align: center;
+  align-content: center;
+}
+
+.button {
+  display: flex;
+  align-content: center;
+}
+
+#add-ticket{
+  
 }

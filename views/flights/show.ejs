@@ -24,7 +24,27 @@
 
   <div>Now Flying: </div>
   <div><%= flight.nowFlying ? 'Yes' : 'No' %></div>
+
+  <div>Ticket:</div>
+
 </section>
+
+<!-- <form id="add-ticket" action="/flights/<%= flight._id%>/tickets" method="POST"> -->
+  <label for="seat">Seat No.</label>
+    <%- tickets.map(p => 
+      `<option value="${p._id}">${p.seat}</option>`
+    ).join('') %>
+    <br>  
+    <label for="price">Ticket Price</label>
+    <%- tickets.map(p => 
+      `<option value="${p._id}">${p.price}</option>`
+    ).join('') %>
+
+  <a href="/tickets/<%= flight._id %>/new"
+  <%- title === 'Add Ticket' ? 'class="active"' : '' %>>
+  ADD Ticket</a>
+<!-- </form> -->
+
 
 <br><br><h2>Destinations</h2>
 <form id="add-review-form" method="POST"
@@ -35,18 +55,18 @@
   <label>Arrival:
         <input type="datetime-local" name="arrival"> 
   </label>
-  <input type="submit" value="Add Destination">
   <br>
   <label>Airport:
     <select name="airport">
-        <option value="AUS">AUS</option>
-        <option value="DAL">DAL</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-        <option value="SEA">SEA</option>
+      <option value="AUS">AUS</option>
+      <option value="DAL">DAL</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+      <option value="SEA">SEA</option>
     </select>
   </form>
   <hr>
+  <input type="submit" value="Add Destination">
 
     <% if (flight.destination) { %>
         <table>
@@ -62,7 +82,7 @@
               <tr>
                 <td><%= r.airport %></td>
                 <td><%= r.arrival %></td>
-                <!-- <td><%= r.destination %></td> -->
+                <td><%= r.destination %></td>
               </tr>
             <% }); %>
           </tbody>

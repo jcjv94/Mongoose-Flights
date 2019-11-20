@@ -9,16 +9,19 @@
 </head>
 <body>
   
-      <h2>Flight List</h2>
-  <table>
-    <thead>
+      <h2 class="heading">Flight List</h2>
+  <table class="fullTable">
+    <thead class="tableHeadings">
+      <div>
       <th>Airline</th>
       <th>AirPort</th>
       <th>Flight Number</th>
-      <th>Departs</th>
+      <th>Departure</th>
+    </div>
       <th>Now Flying</th>
+      <th>Flight Details</th>
     </thead>
-    <tbody>
+    <tbody >
     <% flights.forEach(function(flight) { %>
       <tr>
         <td><%= flight.airline %></td>
