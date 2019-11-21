@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
   
       <h2 class="heading">Flight List</h2>
-  <table class="fullTable">
+  <table class="table table-striped table-bordered table-hover">
     <thead class="tableHeadings">
       <div>
       <th>Airline</th>
@@ -22,7 +22,7 @@
         
         <!-- combine departs and now flying yes or no into an if statement -->
         <td><%= flight.nowFlying ? 'Yes' : 'No' %></td>
-        <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
+        <td><a href="/flights/<%= flight._id %>"><button class="btn btn-mini btn-primary" type="button">DETAILS</button></a></td>
       </tr>
     <% }) %>
     

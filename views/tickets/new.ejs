@@ -2,17 +2,41 @@
 
 <h2>Choose your Seat</h2>
 
-<form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+<form class="form-horizontal" action="/flights/<%= flight._id %>/tickets" method="POST">
+    <div class="control-group">
+      <label class="control-label" for="inputSeat">Seat number:</label>
+      <div class="controls">
+        <input type='text' name="seat" required pattern="[A-F][1-9]\d?">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="inputPrice">Price:</label>
+      <div class="controls">
+        <input type="number" name="price" id="inputPrice" placeholder="Price">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" value="Add Ticket" class="btn btn-success">Add Ticket</button>
+      </div>
+    </div>
+
+  </form>
+  
+
+<!-- <form action="/flights/<%= flight._id %>/tickets" method="POST">
   <label>Seat number:</label>
   <input type='text' name="seat" required pattern="[A-F][1-9]\d?">
   <br>
   <label>Price:</label>
-  <input type="number" name="price">
+  <input type="number" name="price"> -->
   <!-- <label>Flight:</label>
   <input type="objectId" name="Flight"> -->
-  <br>
+  <!-- <br>
 
-  <input type="submit" value="Add Ticket">
-</form>
+  <input type="submit" value="Add Ticket" >
+</form> -->
 
 <%- include('../partials/footer') %>

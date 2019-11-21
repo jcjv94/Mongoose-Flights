@@ -15,6 +15,22 @@ a {
   font-size: 13px;
 }
 
+nav > img {
+  width: 80px;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav {
+  background-color: gray;
+  margin: 0 auto;
+}
+
 h2 {
   font-size: xx-large;
   letter-spacing: 3px;
