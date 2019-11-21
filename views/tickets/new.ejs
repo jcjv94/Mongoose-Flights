@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add a ticket</title>
-</head>
-<body>
+<%- include('../partials/header') %>
 
-
+<h2>Choose your Seat</h2>
 
 <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
-  <label>Seat:</label>
+  <label>Seat number:</label>
   <input type='text' name="seat" required pattern="[A-F][1-9]\d?">
+  <br>
   <label>Price:</label>
   <input type="number" name="price">
   <!-- <label>Flight:</label>
   <input type="objectId" name="Flight"> -->
+  <br>
+
   <input type="submit" value="Add Ticket">
 </form>
 
-</body>
-</html>
+<%- include('../partials/footer') %>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mongoose Flights</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('../partials/header') %>
   
       <h2 class="heading">Flight List</h2>
   <table class="fullTable">
@@ -34,6 +25,6 @@
         <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
       </tr>
     <% }) %>
-</body>
-</html>
+    
+    <%- include('../partials/footer') %>
 

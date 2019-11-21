@@ -10,6 +10,9 @@ body {
 
 a {
   color: #00B7FF;
+  padding: 3px;
+  /* background-color: white; */
+  font-size: 13px;
 }
 
 h2 {
@@ -47,6 +50,31 @@ label{
   align-content: center;
 }
 
-#add-ticket{
+
+#ticketBtn {
+  border: solid black 2px;
+  padding: 5px;
   
+}
+
+#addDestBtn {
+  background-color: transparent;
+  color: #00B7FF;
+  font-size: 13px;
+  border:solid black 2px;
+}
+
+.show-page {
+  display: flex;
+  padding: 8px;
+  border:solid black 2px;
+}
+.showItem {
+  padding: 4px 4px;
+
+}
+
+#add-ticket-form{
+  display: grid;
+  font-size: 13px;
 }
